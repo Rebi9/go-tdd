@@ -8,9 +8,9 @@ import (
 func TestMulitipulication(t *testing.T) {
 	five := NewDollar(5)
 	product := five.times(2)
-	assert.Equal(t, 10, product.Amount)
+	assert.Equal(t, NewDollar(10), product)
 	product = five.times(3)
-	assert.Equal(t, 15, product.Amount)
+	assert.Equal(t, NewDollar(15), product)
 }
 
 func TestEquality(t *testing.T) {

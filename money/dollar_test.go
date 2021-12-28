@@ -16,3 +16,9 @@ func TestEquality(t *testing.T) {
 	assert.Equal(t, true, product.equals(NewDollar(5)))
 	assert.Equal(t, false, product.equals(NewDollar(6)))
 }
+
+func TestFrancMulitipulication(t *testing.T) {
+	five := NewFranc(5)
+	assert.Equal(t, NewFranc(10), five.times(2))
+	assert.Equal(t, NewFranc(15), five.times(3))
+}

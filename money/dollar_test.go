@@ -12,3 +12,8 @@ func TestMulitipulication(t *testing.T) {
 	product = five.times(3)
 	assert.Equal(t, 15, product.Amount)
 }
+
+func TestEquality(t *testing.T) {
+	product := NewDollar(5)
+	assert.Equal(t, true, product.equals(NewDollar(5)))
+}

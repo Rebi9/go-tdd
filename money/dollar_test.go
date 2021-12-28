@@ -16,4 +16,5 @@ func TestMulitipulication(t *testing.T) {
 func TestEquality(t *testing.T) {
 	product := NewDollar(5)
 	assert.Equal(t, true, product.equals(NewDollar(5)))
+	assert.Equal(t, false, product.equals(NewDollar(6)))
 }

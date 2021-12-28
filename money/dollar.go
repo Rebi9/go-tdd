@@ -13,5 +13,5 @@ func (this *Dollar) times(multiplier int) *Dollar {
 }
 
 func (this *Dollar) equals(dollar *Dollar) bool {
-	return true;
+	return this.Amount == dollar.Amount
 }

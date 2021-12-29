@@ -46,6 +46,6 @@ func (this *Money) toString() string {
 	return fmt.Sprintf("%v %v", this.amount, this.currency)
 }
 
-func (this *Money) plus(added *Money) *Money {
-	return newMoney(this.amount + added.amount, this.currency)
+func (this *Money) plus(added *Money) *Sum {
+	return NewSum(this, added)
 }

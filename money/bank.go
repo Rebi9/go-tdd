@@ -9,6 +9,5 @@ func NewBank() *Bank {
 }
 
 func (this *Bank) reduce(source *Sum, to string) *Money {
-	amount := source.Augend.amount + source.Added.amount
-	return newMoney(amount, to)
+	return source.reduce(to)
 }

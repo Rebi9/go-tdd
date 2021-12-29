@@ -27,5 +27,9 @@ func NewDollar(amount int) *Money {
 }
 
 func (this *Money) times(multiplier int) *Money {
-	return NewDollar(this.amount * multiplier)
+	return &Money{ amount: this.amount * multiplier, unit: this.unit }
+}
+
+func NewFranc(amount int) *Money {
+	return &Money{ amount: amount, unit: "Franc" }
 }

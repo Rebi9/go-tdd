@@ -18,6 +18,7 @@ func TestEquality(t *testing.T) {
 	franc := NewFranc(5)
 	assert.Equal(t, true, franc.equals(NewFranc(5)))
 	assert.Equal(t, false, franc.equals(NewFranc(6)))
+	assert.Equal(t, false, dollar.equals(franc))
 }
 
 func TestFrancMulitipulication(t *testing.T) {

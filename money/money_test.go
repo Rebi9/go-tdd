@@ -35,8 +35,9 @@ func TestSimpleAddition(t *testing.T) {
 func TestPlusReturnSum(t *testing.T) {
 	five := NewDollar(5)
 	result := five.plus(five)
-	assert.Equal(t, five, result.Augend)
-	assert.Equal(t, five, result.Added)
+	sum := result.(Sum)
+	assert.Equal(t, five, sum.Augend)
+	assert.Equal(t, five, sum.Added)
 }
 
 func TestReduceSum(t *testing.T) {
@@ -44,4 +45,10 @@ func TestReduceSum(t *testing.T) {
 	bank := NewBank()
 	result := bank.reduce(sum, "USD")
 	assert.Equal(t, NewDollar(7), result)
+}
+
+func TestReduceMoney(t *testing.T) {
+	bank := NewBank()
+	result := bank.reduce(NewDollar(1), "USD")
+	assert.Equal(t, NewDollar(1), result)
 }

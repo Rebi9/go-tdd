@@ -2,34 +2,34 @@ package money
 
 type MoneyAccesser interface {
 	getAmount() int
-	getUnit() string
+	getCurrency() string
 }
 
 type Money struct {
 	amount int
-	unit string
+	currency string
 }
 
 func (this *Money) equals(accesser MoneyAccesser) bool {
-	return this.getAmount() == accesser.getAmount() && this.getUnit() == accesser.getUnit()
+	return this.getAmount() == accesser.getAmount() && this.getCurrency() == accesser.getCurrency()
 }
 
 func (this *Money) getAmount() int {
 	return this.amount
 }
 
-func (this *Money) getUnit() string {
-	return this.unit
+func (this *Money) getCurrency() string {
+	return this.currency
 }
 
 func NewDollar(amount int) *Money {
-	return &Money{ amount: amount, unit: "Dollar" }
+	return &Money{ amount: amount, currency: "USD" }
 }
 
 func (this *Money) times(multiplier int) *Money {
-	return &Money{ amount: this.amount * multiplier, unit: this.unit }
+	return &Money{ amount: this.amount * multiplier, currency: this.currency }
 }
 
 func NewFranc(amount int) *Money {
-	return &Money{ amount: amount, unit: "Franc" }
+	return &Money{ amount: amount, currency: "CHF" }
 }

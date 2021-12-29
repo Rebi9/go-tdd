@@ -26,3 +26,8 @@ func TestFrancMulitipulication(t *testing.T) {
 	assert.Equal(t, NewFranc(10), five.times(2))
 	assert.Equal(t, NewFranc(15), five.times(3))
 }
+
+func TestCurrency(t *testing.T) {
+	assert.Equal(t, "USD", NewDollar(1).getCurrency())
+	assert.Equal(t, "CHF", NewFranc(1).getCurrency())
+}

@@ -23,11 +23,15 @@ func (this *Money) getCurrency() string {
 }
 
 func NewDollar(amount int) *Money {
-	return &Money{ amount: amount, currency: "USD" }
+	return newMoney(amount, "USD")
 }
 
 func NewFranc(amount int) *Money {
-	return &Money{ amount: amount, currency: "CHF" }
+	return newMoney(amount, "CHF")
+}
+
+func newMoney(amount int, currency string) *Money {
+	return &Money{ amount: amount, currency: currency }
 }
 
 func (this *Money) times(multiplier int) *Money {

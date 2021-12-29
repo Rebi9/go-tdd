@@ -26,10 +26,10 @@ func NewDollar(amount int) *Money {
 	return &Money{ amount: amount, currency: "USD" }
 }
 
-func (this *Money) times(multiplier int) *Money {
-	return &Money{ amount: this.amount * multiplier, currency: this.currency }
-}
-
 func NewFranc(amount int) *Money {
 	return &Money{ amount: amount, currency: "CHF" }
+}
+
+func (this *Money) times(multiplier int) *Money {
+	return &Money{ amount: this.amount * multiplier, currency: this.currency }
 }

@@ -23,3 +23,8 @@ func TestCurrency(t *testing.T) {
 	assert.Equal(t, "USD", NewDollar(1).getCurrency())
 	assert.Equal(t, "CHF", NewFranc(1).getCurrency())
 }
+
+func TestSimpleAddition(t *testing.T) {
+	sum := NewDollar(5).plus(NewDollar(5))
+	assert.Equal(t, NewDollar(10), sum)
+}

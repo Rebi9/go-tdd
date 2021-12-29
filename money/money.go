@@ -1,5 +1,9 @@
 package money
 
+import (
+	"fmt"
+)
+
 type MoneyAccesser interface {
 	getAmount() int
 	getCurrency() string
@@ -36,4 +40,8 @@ func newMoney(amount int, currency string) *Money {
 
 func (this *Money) times(multiplier int) *Money {
 	return &Money{ amount: this.amount * multiplier, currency: this.currency }
+}
+
+func (this *Money) toString() string {
+	return fmt.Sprintf("%v %v", this.amount, this.currency)
 }

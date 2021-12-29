@@ -21,3 +21,11 @@ func (this *Money) getAmount() int {
 func (this *Money) getUnit() string {
 	return this.unit
 }
+
+func NewDollar(amount int) *Money {
+	return &Money{ amount: amount, unit: "Dollar" }
+}
+
+func (this *Money) times(multiplier int) *Money {
+	return NewDollar(this.amount * multiplier)
+}

@@ -1,7 +1,7 @@
 package money
 
 type MoneyAccesser interface {
-	getValue() int
+	getAmount() int
 	getUnit() string
 }
 
@@ -11,10 +11,10 @@ type Money struct {
 }
 
 func (this *Money) equals(accesser MoneyAccesser) bool {
-	return this.getValue() == accesser.getValue() && this.getUnit() == accesser.getUnit()
+	return this.getAmount() == accesser.getAmount() && this.getUnit() == accesser.getUnit()
 }
 
-func (this *Money) getValue() int {
+func (this *Money) getAmount() int {
 	return this.amount
 }
 

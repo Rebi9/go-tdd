@@ -8,6 +8,7 @@ func NewBank() *Bank {
 	return &Bank{}
 }
 
-func (this *Bank) reduce(source expression, to string) *Money {
-	return NewDollar(10)
+func (this *Bank) reduce(source *Sum, to string) *Money {
+	amount := source.Augend.amount + source.Added.amount
+	return newMoney(amount, to)
 }

@@ -27,14 +27,14 @@ func (this *Money) getCurrency() string {
 }
 
 func NewDollar(amount int) *Money {
-	return newMoney(amount, "USD")
+	return NewMoney(amount, "USD")
 }
 
 func NewFranc(amount int) *Money {
-	return newMoney(amount, "CHF")
+	return NewMoney(amount, "CHF")
 }
 
-func newMoney(amount int, currency string) *Money {
+func NewMoney(amount int, currency string) *Money {
 	return &Money{ amount: amount, currency: currency }
 }
 

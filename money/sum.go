@@ -11,5 +11,5 @@ func NewSum(augend *Money, added *Money) Sum {
 
 func (this Sum) reduce(to string) *Money {
 	amount := this.Augend.amount + this.Added.amount
-	return newMoney(amount, to)
+	return NewMoney(amount, to)
 }

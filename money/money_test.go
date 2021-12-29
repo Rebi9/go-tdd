@@ -12,9 +12,9 @@ func TestMulitipulication(t *testing.T) {
 }
 
 func TestEquality(t *testing.T) {
-	product := NewDollar(5)
-	assert.Equal(t, true, product.equals(NewDollar(5)))
-	assert.Equal(t, false, product.equals(NewDollar(6)))
+	dollar := NewDollar(5)
+	assert.Equal(t, true, dollar.equals(NewDollar(5)))
+	assert.Equal(t, false, dollar.equals(NewDollar(6)))
 	franc := NewFranc(5)
 	assert.Equal(t, true, franc.equals(NewFranc(5)))
 	assert.Equal(t, false, franc.equals(NewFranc(6)))

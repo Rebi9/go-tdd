@@ -38,7 +38,7 @@ func NewMoney(amount int, currency string) *Money {
 	return &Money{ amount: amount, currency: currency }
 }
 
-func (this *Money) times(multiplier int) *Money {
+func (this *Money) times(multiplier int) Expression {
 	return &Money{ amount: this.amount * multiplier, currency: this.currency }
 }
 
@@ -46,7 +46,7 @@ func (this *Money) toString() string {
 	return fmt.Sprintf("%v %v", this.amount, this.currency)
 }
 
-func (this *Money) plus(added *Money) Expression {
+func (this *Money) plus(added Expression) Expression {
 	return NewSum(this, added)
 }
 

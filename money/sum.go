@@ -15,5 +15,9 @@ func (this Sum) reduce(bank *Bank, to string) *Money {
 }
 
 func (this Sum) plus(added Expression) Expression {
-	return Sum{}
+	return NewSum(this, added)
+}
+
+func (this Sum) times(multiplier int) Expression {
+	return NewSum(this.Augend.times(multiplier), this.Added.times(multiplier))
 }

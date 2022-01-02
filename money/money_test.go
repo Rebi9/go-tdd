@@ -75,3 +75,27 @@ func TestMixedAddition(t *testing.T) {
 
 	assert.Equal(t, NewDollar(10), result)
 }
+
+func TestSumPlusMoney(t *testing.T) {
+	fiveBucks := NewDollar(5)
+	tenFrancs := NewFranc(10)
+	bank := NewBank()
+	bank.addRate("CHF", "USD", 2)
+
+	sum := NewSum(fiveBucks, tenFrancs).plus(fiveBucks)
+	result := bank.reduce(sum, "USD")
+
+	assert.Equal(t, NewDollar(15), result)
+}
+
+func TestSumTimes(t *testing.T) {
+		fiveBucks := NewDollar(5)
+	tenFrancs := NewFranc(10)
+	bank := NewBank()
+	bank.addRate("CHF", "USD", 2)
+
+	sum := NewSum(fiveBucks, tenFrancs).times(2)
+	result := bank.reduce(sum, "USD")
+
+	assert.Equal(t, NewDollar(20), result)
+}

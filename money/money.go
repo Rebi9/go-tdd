@@ -50,6 +50,7 @@ func (this *Money) plus(added *Money) Expression {
 	return NewSum(this, added)
 }
 
-func (this *Money) reduce(to string) *Money {
-	return this
+func (this *Money) reduce(bank *Bank, to string) *Money {
+	rate := bank.rate(this.currency, to)
+	return NewMoney(this.amount / rate, to)
 }

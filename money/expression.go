@@ -1,5 +1,5 @@
 package money
 
 type Expression interface {
-	reduce(string) *Money
+	reduce(*Bank, string) *Money
 }

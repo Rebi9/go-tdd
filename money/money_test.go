@@ -52,3 +52,15 @@ func TestReduceMoney(t *testing.T) {
 	result := bank.reduce(NewDollar(1), "USD")
 	assert.Equal(t, NewDollar(1), result)
 }
+
+func TestReduceMoneyDifferencentCurrency(t *testing.T) {
+	bank := NewBank()
+	bank.addRate("CHF", "USD", 2)
+	result := bank.reduce(NewFranc(2), "USD")
+	assert.Equal(t, NewDollar(1), result)
+}
+
+func TestIdentityRate(t *testing.T) {
+	bank := NewBank()
+	assert.Equal(t, 1, bank.rate("USD", "USD"))
+}
